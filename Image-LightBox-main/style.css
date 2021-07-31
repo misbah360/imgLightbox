@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+img {
+    object-fit: cover;
+}
+.galleryHeading {
+    width: 100%;
+    margin: auto;
+    background: #ffffff00;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.galleryHeading p {
+    width: 80%;
+    margin: auto;
+    color: #2d2d2d;
+    font-size: 86%;
+}
+
+.galleryHeading h1 {
+    color: #00b8ff;
+    font-size: 35px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.galleryWrapper {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery .image {
+    padding: 7px;
+    width: calc(33.3333%);
+    height: 300px;
+}
+
+.gallery .image span {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.gallery .image img {
+    width: 100%;
+    vertical-align: middle;
+    transition: all 0.3s ease 0s;
+}
+
+.gallery .image:hover img {
+    transform: scale(1.1);
+}
+
+.preview-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgb(255, 255, 255);
+    max-width: 800px;
+    width: 100%;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    padding: 0px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+}
+
+.preview-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease 0s;
+}
+
+.preview-box .details {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px 12px 10px;
+    justify-content: space-between;
+}
+
+.preview-box .details .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(0 184 255);
+}
+
+.details .title p {
+    margin: 0px 5px;
+}
+
+.details .title p.current-img {
+    font-weight: 500;
+}
+
+.details .icon {
+    color: rgb(0 184 255);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.preview-box .image-box {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.image-box .slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    cursor: pointer;
+    height: 50px;
+    width: 60px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.slide.prev {
+    left: 0px;
+}
+
+.slide.next {
+    right: 0px;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 0px 0px 3px 3px;
+}
+
+.shadow {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: none;
+    background: rgb(0 0 0 / 70%);
+}
+
+@media (max-width: 1000px) {
+    .gallery .image {
+        width: calc(50%);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery .image {
+        width: 100%;
+        padding: 4px;
+    }
+}
